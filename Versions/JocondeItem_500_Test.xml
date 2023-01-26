@@ -1,0 +1,140 @@
+<root>
+	<system>
+		<type>JocondeItem</type>
+		<path>/default-domain/museum/museumRepository/JocondeItem.1435105423214</path>
+		<lifecycle-state>project</lifecycle-state>
+		<lifecycle-policy>jocondeInventory</lifecycle-policy>
+		<access-control>
+			<acl name="inherited">
+				<entry principal="administrators" permission="Everything" grant="true"/>
+				<entry principal="Administrator" permission="Everything" grant="true"/>
+				<entry principal="members" permission="Read" grant="true"/>
+				<entry principal="members" permission="Version" grant="true"/>
+				<entry principal="members" permission="ReadWrite" grant="true"/>
+				<entry principal="members" permission="WriteSecurity" grant="true"/>
+				<entry principal="members" permission="Unlock" grant="true"/>
+				<entry principal="members" permission="dublincoreTitleVisible" grant="true"/>
+				<entry principal="administrators" permission="Everything" grant="true"/>
+				<entry principal="Administrator" permission="Everything" grant="true"/>
+				<entry principal="members" permission="Read" grant="true"/>
+				<entry principal="members" permission="Version" grant="true"/>
+			</acl>
+		</access-control>
+	</system>
+	<schema xmlns="http://project.nuxeo.com/geide/schemas/uid/" name="uid">
+		<uid/>
+		<minor_version>0</minor_version>
+		<major_version>1</major_version>
+	</schema>
+	<schema xmlns:vieDeLObjet="http://types.museum.skinsoft.org/schemas/vieDeLObjet" name="vieDeLObjet">
+		<vieDeLObjet:localisation>
+			<localisationFuture/>
+			<localisationFutureDetaillee>
+				<localisationFuture/>
+				<precision/>
+			</localisationFutureDetaillee>
+			<statut>71b6d2e3-2d9a-460a-a4dc-dce80ae94fa7</statut>
+			<localisationPermanente/>
+			<notes>
+				<test>Localisation : Le Havre / Ville du Havre (collectivité) / MuMa - musée d'art moderne André Malraux / Réserves / Réserve Peintures / Classeur à dessins / Classeur B / Classeur B - B9
+Statut : Actuel
+Date de début : 4 novembre 2014
+</test>
+			</notes>
+			<situation>e9b83481-673c-4830-8287-fd812570a398</situation>
+			<dateDAttribution>4 novembre 2014</dateDAttribution>
+			<departement/>
+		</vieDeLObjet:localisation>
+		<vieDeLObjet:conservation>
+			<methodesEmballageOuConditionnementPreconisees/>
+			<conditionsExposition/>
+			<conservationCost/>
+			<autorisationManipulationTransport/>
+			<recommendationsSecurite/>
+			<conditionsPretOuDepot/>
+			<methodesDeConservation/>
+			<loanStatus/>
+			<exigencesSpecifiques/>
+			<methodesStockagePreconisees/>
+			<notes/>
+			<methodesDeManipulationPreconisees/>
+			<environnementsDeConservation/>
+			<numeroObjetScenographie>
+				<precision/>
+				<numero/>
+			</numeroObjetScenographie>
+		</vieDeLObjet:conservation>
+	</schema>
+	<schema xmlns:indexation_skm="http://types.museum.skinsoft.org/schemas/indexation_skm" name="indexation_skm">
+		<indexation_skm:objetsExternes/>
+		<indexation_skm:lieux/>
+		<indexation_skm:notes/>
+		<indexation_skm:dates/>
+		<indexation_skm:themePrincipal/>
+		<indexation_skm:themes/>
+		<indexation_skm:authors/>
+		<indexation_skm:evenements/>
+	</schema>
+	<schema xmlns="http://www.nuxeo.org/ecm/schemas/common/" name="common">
+		<icon/>
+		<icon-expanded/>
+		<size/>
+	</schema>
+	<schema xmlns:sKURLlist="http://utils.document.platform.skinsoft.org/schemas/sKURLlist" name="sKURLlist">
+		<sKURLlist:urls/>
+	</schema>
+	<schema xmlns:sKMObjectInsurance="http://types.assurances.estimations.museum.skinsoft.org/schemas/sKMObjectInsurance" name="sKMObjectInsurance">
+		<sKMObjectInsurance:date/>
+		<sKMObjectInsurance:highValue/>
+		<sKMObjectInsurance:value/>
+		<sKMObjectInsurance:lowValue/>
+		<sKMObjectInsurance:reasons/>
+		<sKMObjectInsurance:currency/>
+		<sKMObjectInsurance:notes/>
+		<sKMObjectInsurance:insuranceCompanie/>
+		<sKMObjectInsurance:endDate/>
+		<sKMObjectInsurance:insurer/>
+	</schema>
+	<schema xmlns:sKWExportedObject="http://types.export.web.skinsoft.org/schemas/sKWExportedObject" name="sKWExportedObject">
+		<sKWExportedObject:locationPrecision/>
+		<sKWExportedObject:tags/>
+		<sKWExportedObject:locationCode/>
+	</schema>
+	<schema xmlns:skmMineralogy="http://types.naturelle.histoire.museum.skinsoft.org/schemas/skmMineralogy" name="skmMineralogy">
+		<skmMineralogy:depositMode/>
+		<skmMineralogy:class/>
+		<skmMineralogy:rockTypes/>
+	</schema>
+	<schema xmlns:skmGeology="http://types.naturelle.histoire.museum.skinsoft.org/schemas/skmGeology" name="skmGeology">
+		<skmGeology:levelAndLayers/>
+		<skmGeology:specimenCount/>
+	</schema>
+	<schema xmlns:contexteHistorique="http://types.museum.skinsoft.org/schemas/contexteHistorique" name="contexteHistorique">
+		<contexteHistorique:millesimes/>
+		<contexteHistorique:reproductions/>
+		<contexteHistorique:objetsAssocies/>
+		<contexteHistorique:utilisationsDestinations/>
+		<contexteHistorique:decouvertesCollectesRecoltes/>
+		<contexteHistorique:historique/>
+		<contexteHistorique:idObjetsEnRapport/>
+		<contexteHistorique:genese/>
+		<contexteHistorique:periodes/>
+		<contexteHistorique:lieuxDUtilisationDestination/>
+		<contexteHistorique:lieuxDeCreationExecution/>
+	</schema>
+	<schema xmlns:attachedMedias="http://types.media.platform.skinsoft.org/schemas/attachedMedias" name="attachedMedias">
+		<attachedMedias:medias/>
+	</schema>
+	<schema xmlns:jocondeItemRecolement="http://types.museum.skinsoft.org/schemas/jocondeItemRecolement" name="jocondeItemRecolement">
+		<jocondeItemRecolement:status/>
+		<jocondeItemRecolement:searchFailure/>
+		<jocondeItemRecolement:date/>
+		<jocondeItemRecolement:type/>
+		<jocondeItemRecolement:complaint/>
+		<jocondeItemRecolement:perceptionTitle/>
+	</schema>
+	<schema xmlns:jocondeItemTracking="http://types.museum.skinsoft.org/schemas/jocondeItemTracking" name="jocondeItemTracking">
+		<jocondeItemTracking:date/>
+		<jocondeItemTracking:viewed/>
+	</schema>
+</root>

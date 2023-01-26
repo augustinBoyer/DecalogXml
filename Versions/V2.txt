@@ -1,0 +1,134 @@
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
+import java.util.*;
+import org.w3c.dom.*;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.apache.commons.math3.util.ArithmeticUtils;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.XmlObject;
+
+public class Main
+{
+    public static void main(String[] args) throws ParserConfigurationException,
+            SAXException, IOException {
+        try {
+
+            ArrayList<Hashtable<String, String>> arr = new ArrayList<Hashtable<String, String>>();
+
+
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document document = db.parse("C:\\Users\\Augustin\\Downloads\\reversibilite_muma_20221215\\reversibilite_muma_20221215\\entities\\JocondeItem\\JocondeItem_500_Test.xml");
+            document.getDocumentElement().normalize();
+            System.out.println("Root Element :" + document.getDocumentElement().getNodeName());
+            NodeList nList = document.getElementsByTagName("schema");
+            System.out.println("----------------------------");
+
+            ArrayList<String> nodes = new ArrayList<>();
+
+            int i = 0;
+            Hashtable<String, String> dico = new Hashtable<String, String>();
+            int length = nList.getLength();
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+                dico = new Hashtable<String, String>();
+                HSSFWorkbook wb = new HSSFWorkbook();
+                Sheet feuille = wb.createSheet("new sheet");
+                Node nNode = nList.item(temp);
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) nNode;
+
+                    NodeList atts = nNode.getChildNodes();
+
+                    System.out.println(eElement.getTagName());
+                    nodes = new ArrayList<>();
+
+                    for (int j = 1; j < atts.getLength(); j++) {
+
+                        nodes.add(atts.item(j).getNodeName());
+                        j++;
+                    }
+
+                    for (int j = 0; j < nodes.size(); j++) {
+                        String test=eElement.getElementsByTagName(nodes.get(j)).item(0).getTextContent();
+                        String test0=nodes.get(j);
+                        dico.put(nodes.get(j), eElement.getElementsByTagName(nodes.get(j)).item(0).getTextContent());
+                    }
+                    /*for(int tp0 = 0; tp0 < dico.size(); tp0++){
+
+
+
+                        for(int tp = 0; tp < dico.size(); tp++){
+
+
+
+                        }
+
+
+                    }*/
+
+                    int tp = dico.size() - 1;
+                    int tp0 = 0;
+
+                    Enumeration<String> keys = dico.keys();
+                    while( keys.hasMoreElements() ){
+                        String test = keys.nextElement();
+                        //String test0 = dico.get(keys.nextElement());
+                        Row row = feuille.createRow((short)tp);
+
+                        row.createCell(tp0).setCellValue(test);
+
+                        row.createCell(tp0 + 1).setCellValue(dico.get(test));
+
+
+                        tp--;
+                    }
+
+                    arr.add(dico);
+
+                    FileOutputStream fileOut;
+                    try {
+                        fileOut = new FileOutputStream("Test\\nouveauFichier" + i + ".xls");
+                        wb.write(fileOut);
+                        fileOut.close();
+                        i++;
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+;                }
+            }
+            System.out.println(arr);
+            System.out.println(dico);
+
+
+
+        } catch(IOException  e) {
+            e.printStackTrace();
+        }
+    }
+}
